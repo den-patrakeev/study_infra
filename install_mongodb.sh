@@ -10,5 +10,4 @@ sudo apt-get -y install mongodb-org  --allow-unauthenticated
 
 sudo systemctl start mongod
 sudo systemctl enable mongod
-sudo systemctl status mongod
 
