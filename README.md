@@ -1,3 +1,5 @@
+## ДЗ №5
+
 bastion_IP = 35.217.17.65
 someinternalhost_IP = 10.132.0.3
 
@@ -14,9 +16,16 @@ Host someinternalhost
 
 ssh someinternalhost
 
-testapp_IP = 35.228.23.156 
-testapp_port = 9292
+## ДЗ №6
 
+```bash
+testapp_IP = 35.228.23.156
+testapp_port = 9292
+```
+
+## gcloud
+
+```bash
 gcloud compute instances create reddit-app\
   --boot-disk-size=10GB \
   --image-family ubuntu-1604-lts \
@@ -38,6 +47,9 @@ systemctl start mongod
 systemctl enable mongod
 cd ~ && git clone -b monolith https://github.com/express42/reddit.git
 cd ~/reddit && bundle install && puma -d'
+```
 
+```bash
 gcloud compute firewall-rules create default-puma-server --network default --direction ingress --action allow --target-tags puma-server --source-ranges 0.0.0.0/0 --rules tcp:9292
+```
 
